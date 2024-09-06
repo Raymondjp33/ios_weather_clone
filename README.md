@@ -1,17 +1,5 @@
-# lyssn_project
+## Welcome!
 
-A new Flutter project.
+This is a simple flutter project created for the problem that was posed.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# lyssn_project
+A launch.json file has been created so the debugger will work to run the project, otherwise good old `flutter run` should work just fine!
