@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:lyssn_project/list_page.dart';
+import 'package:lyssn_project/list_widget.dart';
 
 void main() {
   runApp(const MyApp());
