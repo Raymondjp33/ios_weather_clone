@@ -22,7 +22,9 @@ class WeatherProvider extends ChangeNotifier {
         .decode((await http.get(Uri.parse(forecastEndpoint(zipCode)))).body);
 
     forecastModel = ForecastModel(
-        location: forecast['location'], current: forecast['current']);
+      location: forecast['location'],
+      current: forecast['current'],
+    );
 
     notifyListeners();
   }

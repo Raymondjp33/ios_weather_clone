@@ -11,22 +11,24 @@ class ListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: colorList.length,
-        itemBuilder: (context, index) {
-          Color currentColor = colorList[index];
-          return Column(
-            children: [
-              Container(width: 50, height: 50, color: currentColor),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                  'R: ${currentColor.red} G: ${currentColor.green} B: ${currentColor.blue}'),
-              const SizedBox(
-                height: 20,
-              ),
-            ],
-          );
-        });
+      itemCount: colorList.length,
+      itemBuilder: (context, index) {
+        Color currentColor = colorList[index];
+        return Column(
+          children: [
+            Container(width: 50, height: 50, color: currentColor),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              'R: ${currentColor.red} G: ${currentColor.green} B: ${currentColor.blue}',
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        );
+      },
+    );
   }
 }
