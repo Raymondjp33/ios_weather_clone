@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'pages/landing.dart';
+
 import 'providers/weather_provider.dart';
+import 'router.dart';
 
 void main() {
   runApp(const App());
@@ -18,8 +19,8 @@ class App extends StatelessWidget {
           create: (_) => WeatherProvider(),
         ),
       ],
-      child: MaterialApp(
-        home: Landing(),
+      child: MaterialApp.router(
+        routerConfig: router,
       ),
     );
   }
