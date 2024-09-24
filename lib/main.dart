@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'providers/weather_provider.dart';
+import 'providers/app_provider.dart';
 import 'router.dart';
 
 void main() {
@@ -16,10 +16,11 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => WeatherProvider(),
+          create: (_) => AppProvider(),
         ),
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routerConfig: router,
       ),
     );
