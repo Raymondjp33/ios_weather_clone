@@ -11,9 +11,11 @@ ForecastDayModel _$ForecastDayModelFromJson(Map<String, dynamic> json) =>
       hour: (json['hour'] as List<dynamic>)
           .map((e) => HourModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      day: DayModel.fromJson(json['day'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ForecastDayModelToJson(ForecastDayModel instance) =>
     <String, dynamic>{
       'hour': instance.hour,
+      'day': instance.day,
     };
