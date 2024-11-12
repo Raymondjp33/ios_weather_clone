@@ -15,5 +15,5 @@ ForecastModel _$ForecastModelFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ForecastModelToJson(ForecastModel instance) =>
     <String, dynamic>{
-      'forecastday': instance.forecastDay,
+      'forecastday': instance.forecastDay.map((e) => e.toJson()).toList(),
     };

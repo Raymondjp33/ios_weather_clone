@@ -15,5 +15,5 @@ CurrentModel _$CurrentModelFromJson(Map<String, dynamic> json) => CurrentModel(
 Map<String, dynamic> _$CurrentModelToJson(CurrentModel instance) =>
     <String, dynamic>{
       'temp_f': instance.tempF,
-      'condition': instance.condition,
+      'condition': instance.condition.toJson(),
     };

@@ -5,7 +5,7 @@ import 'condition.model.dart';
 
 part 'hour.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class HourModel {
   @JsonKey(name: 'time_epoch')
   final int timeEpoch;

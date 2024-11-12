@@ -4,7 +4,7 @@ import 'condition.model.dart';
 
 part 'day.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class DayModel {
   @JsonKey(name: 'maxtemp_f')
   final double maxTempF;

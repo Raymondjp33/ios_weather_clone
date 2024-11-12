@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'condition.model.dart';
 part 'current.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class CurrentModel {
   @JsonKey(name: 'temp_f')
   final double tempF;

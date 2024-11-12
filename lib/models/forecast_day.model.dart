@@ -5,7 +5,7 @@ import 'hour.model.dart';
 
 part 'forecast_day.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class ForecastDayModel {
   List<HourModel> hour;
   DayModel day;

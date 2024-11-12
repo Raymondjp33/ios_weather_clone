@@ -18,5 +18,5 @@ Map<String, dynamic> _$HourModelToJson(HourModel instance) => <String, dynamic>{
       'time_epoch': instance.timeEpoch,
       'time': instance.time,
       'temp_f': instance.tempF,
-      'condition': instance.condition,
+      'condition': instance.condition.toJson(),
     };

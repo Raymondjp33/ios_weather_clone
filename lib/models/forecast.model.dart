@@ -4,7 +4,7 @@ import 'forecast_day.model.dart';
 
 part 'forecast.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class ForecastModel {
   @JsonKey(name: 'forecastday')
   List<ForecastDayModel> forecastDay;

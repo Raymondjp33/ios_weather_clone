@@ -16,5 +16,5 @@ DayModel _$DayModelFromJson(Map<String, dynamic> json) => DayModel(
 Map<String, dynamic> _$DayModelToJson(DayModel instance) => <String, dynamic>{
       'maxtemp_f': instance.maxTempF,
       'mintemp_f': instance.minTempF,
-      'condition': instance.condition,
+      'condition': instance.condition.toJson(),
     };

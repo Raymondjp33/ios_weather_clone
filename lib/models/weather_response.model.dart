@@ -7,7 +7,7 @@ import 'location.model.dart';
 
 part 'weather_response.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class WeatherModel {
   final LocationModel location;
   final CurrentModel current;

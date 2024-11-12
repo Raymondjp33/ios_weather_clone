@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'condition.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class ConditionModel {
   final String text;
   final String icon;
