@@ -1,9 +1,12 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../models/weather_response.model.dart';
 import '../models/zipcode_weather.model.dart';
 import '../services/api_service.dart';
 
 class AppProvider extends ChangeNotifier {
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
   final List<ZipCodeWeatherModel> _zipsWeatherModels = [];
   final PageController _pageController = PageController();
   int _selectedPage = 0;
@@ -29,13 +32,25 @@ class AppProvider extends ChangeNotifier {
       return;
     }
 
-    _zipsWeatherModels.add(
-      ZipCodeWeatherModel(zip: inputtedZip, weatherModel: newWeatherModel),
+    ZipCodeWeatherModel zipModelToAdd = ZipCodeWeatherModel(
+      zip: inputtedZip,
+      weatherModel: newWeatherModel,
     );
+    logAddingZip(zipModelToAdd);
+    _zipsWeatherModels.add(zipModelToAdd);
     int index = _zipsWeatherModels.length - 1;
     _pageController.jumpToPage(index);
     _selectedPage = index;
     clearInputtedZip();
+  }
+
+  Future<void> logAddingZip(ZipCodeWeatherModel zipModelToAdd) async {
+    analytics.logEvent(
+      name: 'addingZip',
+      parameters: {'zipAdded': zipModelToAdd.zip},
+    );
+    analytics.logSelectContent(
+        contentType: 'addingZip', itemId: zipModelToAdd.zip);
   }
 
   void clearInputtedZip() {

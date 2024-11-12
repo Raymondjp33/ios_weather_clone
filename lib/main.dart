@@ -1,28 +1,41 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'app.dart';
+import 'firebase_options.dart' as firebase_options;
 
-import 'providers/app_provider.dart';
-import 'router.dart';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseOptions firebaseOptions =
+      firebase_options.DefaultFirebaseOptions.currentPlatform;
+  await initializeApp(
+    firebaseOptions: firebaseOptions,
+    testing: false,
+  );
 
-void main() {
   runApp(const App());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+// firebase app needs to be initialized before this
+// is called
 
-  @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => AppProvider(),
-        ),
-      ],
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        routerConfig: router,
-      ),
+Future<FirebaseApp?> initializeApp({
+  required FirebaseOptions firebaseOptions,
+  required bool testing,
+}) async {
+  try {
+    var app = await Firebase.initializeApp(
+      options: firebaseOptions,
     );
+    return app;
+    // this error only occurs when running individual tests instead of
+    // running the tests through the ci test runner.  It's a non-issue in this case,
+    // so it can silently fail.
+  } on FirebaseAuthException catch (e) {
+    debugPrint('When trying to start firebase, got error: $e');
+    if (!testing) {
+      rethrow;
+    }
   }
+  return null;
 }
