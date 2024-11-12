@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "75033975156",
+    "project_id": "ios-weather-clone",
+    "storage_bucket": "ios-weather-clone.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75033975156:android:6b2e17dd858113a4833421",
+        "android_client_info": {
+          "package_name": "com.iosWeatherClone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEk3uSsnEafjfiSOS6fhqjzqSKwqdQZyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
