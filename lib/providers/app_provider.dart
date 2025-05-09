@@ -50,7 +50,9 @@ class AppProvider extends ChangeNotifier {
       parameters: {'zipAdded': zipModelToAdd.zip},
     );
     analytics.logSelectContent(
-        contentType: 'addingZip', itemId: zipModelToAdd.zip);
+      contentType: 'addingZip',
+      itemId: zipModelToAdd.zip,
+    );
   }
 
   void clearInputtedZip() {
